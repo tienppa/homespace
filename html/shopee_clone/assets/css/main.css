@@ -49,7 +49,7 @@
 /* user menu */
 .header__navbar-user-menu {
   position: absolute;
-  z-index: 1;
+  z-index: 10;
   padding-left: 0;
   top: calc(100% + 6px);
   right: 0;
@@ -224,7 +224,7 @@
 /* header notification */
 .header__notify {
   position: absolute;
-  z-index: 1;
+  z-index: 10;
   top: 120%;
   right: 0;
   width: 400px;
