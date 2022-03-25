@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSX</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+          JSX - javascript XML cú pháp mở rông của JS - cho ra phần tử(element) của React
+          Babel phân tích và chuyển đổi cú pháp
+       -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const array = [
+        {
+          name: "HTML, CSS",
+        },
+        {
+          name: "Responsive web design",
+        },
+        {
+          name: "ReactJS",
+        },
+      ];
+      const ul = (
+        <ul>
+          {array.map((item, index) => {
+            return <li key={index}>{item.name}</li>;
+          })}
+        </ul>
+      );
+      ReactDOM.render(ul, document.getElementById("root"));
+    </script>
+  </body>
+</html>

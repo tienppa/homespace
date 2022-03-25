@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f5;
+}
+
+body > div {
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 12px 48px;
+  border-radius: 30px;
+  cursor: pointer;
+  min-width: 120px;
+  transition: opacity 0.2s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn + .btn {
+  /* css cho btn dung canh btn */
+  margin-left: 12px;
+}
+
+.btn-size-s {
+  padding: 8px 32px;
+}
+
+.btn-size-l {
+  padding: 16px 56px;
+}
+
+.btn--success {
+  background-color: #71be34;
+}
+
+.btn--warn {
+  background-color: #ffb702;
+}
+
+.btn--error {
+  background-color: #ff623d;
+}
+
+.btn-disable {
+  opacity: 0.5 !important;
+  cursor: default;
+}

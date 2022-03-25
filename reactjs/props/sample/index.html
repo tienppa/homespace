@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Props</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const data = [
+        {
+          id: 65,
+          title: "Tổng hợp các sản phẩm của học viên tại F8 👏👏",
+          meta_description:
+            "Bài viết này nhằm tổng hợp lại các dự án mà học viên F8 đã hoàn thành và chia sẻ trên nhóm Học lập trình web F8. Các dự án dưới...",
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/blog_posts/791/615de64de7e8f.jpg",
+        },
+        {
+          id: 65,
+          title: "Tổng hợp các sản phẩm của học viên tại F8 👏👏",
+          meta_description:
+            "Bài viết này nhằm tổng hợp lại các dự án mà học viên F8 đã hoàn thành và chia sẻ trên nhóm Học lập trình web F8. Các dự án dưới...",
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/blog_posts/791/615de64de7e8f.jpg",
+        },
+        {
+          id: 65,
+          title: "Tổng hợp các sản phẩm của học viên tại F8 👏👏",
+          meta_description:
+            "Bài viết này nhằm tổng hợp lại các dự án mà học viên F8 đã hoàn thành và chia sẻ trên nhóm Học lập trình web F8. Các dự án dưới...",
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/blog_posts/791/615de64de7e8f.jpg",
+        },
+        {
+          id: 65,
+          title: "Tổng hợp các sản phẩm của học viên tại F8 👏👏",
+          meta_description:
+            "Bài viết này nhằm tổng hợp lại các dự án mà học viên F8 đã hoàn thành và chia sẻ trên nhóm Học lập trình web F8. Các dự án dưới...",
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/blog_posts/791/615de64de7e8f.jpg",
+        },
+        {
+          id: 65,
+          title: "Tổng hợp các sản phẩm của học viên tại F8 👏👏",
+          meta_description:
+            "Bài viết này nhằm tổng hợp lại các dự án mà học viên F8 đã hoàn thành và chia sẻ trên nhóm Học lập trình web F8. Các dự án dưới...",
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/blog_posts/791/615de64de7e8f.jpg",
+        },
+        {
+          id: 65,
+          title: "Tổng hợp các sản phẩm của học viên tại F8 👏👏",
+          meta_description:
+            "Bài viết này nhằm tổng hợp lại các dự án mà học viên F8 đã hoàn thành và chia sẻ trên nhóm Học lập trình web F8. Các dự án dưới...",
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/blog_posts/791/615de64de7e8f.jpg",
+        },
+        {
+          id: 65,
+          title: "Tổng hợp các sản phẩm của học viên tại F8 👏👏",
+          meta_description:
+            "Bài viết này nhằm tổng hợp lại các dự án mà học viên F8 đã hoàn thành và chia sẻ trên nhóm Học lập trình web F8. Các dự án dưới...",
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/blog_posts/791/615de64de7e8f.jpg",
+        },
+        {
+          id: 65,
+          title: "Tổng hợp các sản phẩm của học viên tại F8 👏👏",
+          meta_description:
+            "Bài viết này nhằm tổng hợp lại các dự án mà học viên F8 đã hoàn thành và chia sẻ trên nhóm Học lập trình web F8. Các dự án dưới...",
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/blog_posts/791/615de64de7e8f.jpg",
+        },
+      ];
+
+      //   UI component
+      function PostItem({ title, desc, url, course, onClick }) {
+        return (
+          <div
+            className="post-item"
+            style={{
+              width: "200px",
+              marginTop: "20px",
+              padding: "20px",
+              backgroundColor: "#eee",
+              borderRadius: "5px",
+              boxShadow: "2px 5px 5px #FDF7D0",
+            }}
+          >
+            <img
+              src={url}
+              alt=""
+              className="post-img"
+              style={{ width: "100%", height: "110px", objectFit: "contain" }}
+            />
+            <h3 className="post-title">{title}</h3>
+            <p className="post-desc">{desc}</p>
+            <button
+              style={{
+                width: "100%",
+                padding: "8px",
+                border: "none",
+                backgroundColor: "#555",
+                color: "#fff",
+                borderRadius: "2px",
+              }}
+              onClick={() => onClick(course)}
+            >
+              Buy
+            </button>
+          </div>
+        );
+      }
+
+      //   container
+      function App() {
+        const handleClick = (course) => {
+          console.log(course.title);
+        };
+        return (
+          <div
+            className="wrapper"
+            style={{
+              width: "1024px",
+              maxWidth: "100%",
+              margin: "0 auto",
+              display: "flex",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+            }}
+          >
+            {data.map((item, index) => (
+              <PostItem
+                key={index}
+                title={item.title}
+                desc={item.meta_description}
+                url={item.image_url}
+                course={item}
+                onClick={handleClick}
+              />
+            ))}
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

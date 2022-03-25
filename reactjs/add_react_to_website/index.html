@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add react to website</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- 
+          1. Github, NPMJS, UNPKG
+          2. Add react to website
+          3. Official docs
+       -->
+
+    <!-- 
+           React.createElement() => React element
+           So sánh với document.createElement() -> DOM Element
+           Thay đổi id, className, style
+           Thêm text, HTML
+           
+        -->
+
+    <!-- 
+            Tại sao phải sử dụng react-dom
+            - React-dom là một thư viện là cầu nối giữa react và dom
+            - Tạo ra react-element và render vào dom
+            Tại sao phải tách react-dom ra
+            - Khi react-native ra đời thì tách ra
+            Render UI
+
+                <div class="post-">
+                    <h2 title="Học ReactJS">Học ReactJS</h2>
+                    <p>Học ReactJS từ cơ bản đến nâng cao</p>
+                </div>
+         -->
+
+    <script>
+      // dom
+      const h1DOM = document.createElement("h1");
+
+      h1DOM.title = "Hello";
+      h1DOM.className = "heading";
+      h1DOM.innerText = "Hello guys";
+
+      document.body.appendChild(h1DOM);
+
+      // react => react-dom
+      //   đối số 1 type, thứ 2 là props, thứ 3 children, n
+      const h1React = React.createElement(
+        "h1",
+        {
+          title: "Hello",
+          className: "heading",
+        },
+        "Hello guys"
+      );
+    </script>
+    <script>
+      // DOM
+      const ulDOM = document.createElement("ul");
+      ulDOM.id = "ul-id";
+      ulDOM.style = "color: red; font-size: 30px";
+      const liDOM1 = document.createElement("li");
+      liDOM1.innerText = "JavaScript";
+      const liDOM2 = document.createElement("li");
+      liDOM2.innerText = "HTML";
+      ulDOM.appendChild(liDOM1);
+      ulDOM.appendChild(liDOM2);
+      document.body.appendChild(ulDOM);
+      //   REACT
+      const ulReact = React.createElement(
+        "ul",
+        { id: "ul-id", style: "color: red; font-size: 20px" },
+        React.createElement("li", { id: "li-1" }, "Javascript"),
+        React.createElement("li", null, "HTML")
+      );
+    </script>
+
+    <script>
+      const postItem = React.createElement(
+        "div",
+        { className: "post-item" },
+        React.createElement(
+          "h2",
+          { title: "Học ReactJS tại F8" },
+          "Học ReactJS"
+        ),
+        React.createElement("p", {}, "Học ReactJS từ cơ bản đến nâng cao")
+      );
+      // Get root element
+      const root = document.getElementById("root");
+      //   Render UI
+      ReactDOM.render(postItem, root);
+    </script>
+  </body>
+</html>

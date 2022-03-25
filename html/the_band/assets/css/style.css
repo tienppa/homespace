@@ -1,0 +1,586 @@
+.clear {
+  clear: both;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/* main css */
+.row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.col {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.col-half {
+  width: 50%;
+}
+
+.col-full {
+  width: 100%;
+}
+
+.col-third {
+  width: calc(100% / 3);
+}
+
+.mt-8 {
+  margin-top: 8px !important;
+}
+
+.mt-16 {
+  margin-top: 16px !important;
+}
+
+.mt-32 {
+  margin-top: 32px !important;
+}
+
+.btn {
+  margin-top: 20px;
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
+  padding: 11px 16px;
+  display: inline-block;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+}
+
+.btn:hover {
+  color: #000;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 46px;
+  background-color: #000000;
+  z-index: 1;
+}
+
+#nav {
+  display: inline-block;
+}
+
+#nav,
+.subnav {
+  list-style-type: none;
+}
+
+#nav > li {
+  display: inline-block;
+}
+
+#nav li {
+  position: relative;
+}
+
+#nav > li > a {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#nav li a {
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  display: block;
+}
+
+#nav li:hover .subnav {
+  display: block;
+}
+
+#nav > li:hover > a,
+#nav .subnav li:hover a {
+  color: #000;
+  background-color: #ccc;
+}
+
+#nav .subnav {
+  display: none;
+  min-width: 160px;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#nav .subnav a {
+  color: #000;
+  padding: 0 16px;
+  line-height: 38px;
+}
+
+.nav-arrow-down {
+  font-size: 14px;
+}
+
+#header .mobile-menu-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+
+#header .mobile-menu-btn,
+#header .search-btn {
+  float: right;
+  /* thuoc tinh float: right; lam mat tinh ke thua chieu ngang */
+  padding: 0 21px;
+}
+
+#header .search-btn:hover {
+  background-color: #f44336;
+  cursor: pointer;
+}
+
+#header .mobile-menu-btn {
+  background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon {
+  color: #000;
+}
+
+#header .menu-icon,
+#header .search-icon {
+  color: #fff;
+  font-size: 20px;
+  line-height: 46px;
+}
+
+#slider {
+  position: relative;
+  margin-top: 46px;
+  padding-top: 50%;
+  /* padding-top: 50%; la 50% cua chieu ngang chinh no( dung voi %) */
+  background: url("../img/chicago.jpg") top center / cover no-repeat;
+}
+
+#slider .text-content {
+  position: absolute;
+  bottom: 47px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-align: center;
+}
+#slider .text-heading {
+  font-weight: 500;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+#slider .text-desc {
+  font-size: 15px;
+  margin: 0 15px;
+  text-shadow: 0 0 1px #000;
+}
+
+#content .content-section {
+  width: 800px;
+  max-width: 100%;
+  padding: 64px 16px 112px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#content .section-heading {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#content .section-sub-heading {
+  font-size: 15px;
+  margin-top: 15px;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+#content .section-heading,
+#content .section-sub-heading {
+  text-align: center;
+}
+
+#content .about-text {
+  margin-top: 25px;
+  font-size: 15px;
+  text-align: justify;
+  line-height: 1.4;
+}
+
+#content .member-list {
+  padding-top: 32px;
+  /* overflow: hidden; */
+  /* overflow dung de fix float */
+}
+
+#content .member-name {
+  font-size: 15px;
+}
+
+#content .member-img {
+  margin-top: 15px;
+  width: 154px;
+  border-radius: 4px;
+}
+
+/* tour section */
+.tour-section {
+  background-color: #000;
+}
+
+.tickets-list {
+  background-color: #fff;
+  margin-top: 40px;
+}
+
+.tickets-list li {
+  font-size: 15px;
+  color: #757575;
+  list-style-type: none;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tickets-list .sold-out {
+  font-weight: 500;
+  color: #fff;
+  background-color: #f44336;
+  padding: 3px 4px;
+  margin-left: 16px;
+}
+
+.tickets-list .quantity {
+  float: right;
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  margin-top: -3px;
+}
+
+.places-list {
+  margin-top: 16px;
+}
+
+.places-list .place-img {
+  width: 100%;
+  display: block;
+}
+
+.places-list .place-img:hover {
+  opacity: 0.6;
+}
+
+.places-list .place-body {
+  background-color: #fff;
+  padding: 16px;
+  font-size: 15px;
+}
+
+.places-list .place-heading {
+  font-size: 15px;
+}
+
+.places-list .place-time {
+  margin-top: 15px;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.places-list .place-desc {
+  margin-top: 15px;
+  line-height: 1.4;
+}
+
+.contact-content {
+  margin-top: 48px;
+}
+
+.contact-info {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.contact-info i[class*="ti-"] {
+  width: 30px;
+  display: inline-block;
+}
+
+.contact-form {
+}
+
+.form-control {
+  padding: 11px;
+  border: 1px solid #ccc;
+  width: 100%;
+  outline: none;
+  border-radius: 4px;
+}
+
+/* map section */
+.map-section img {
+  width: 100%;
+}
+
+#footer {
+  padding: 64px 16px;
+  text-align: center;
+}
+
+#footer .socials-list {
+  font-size: 24px;
+}
+
+#footer .socials-list a {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+#footer .copyright a:hover,
+#footer .socials-list a:hover {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+#footer .copyright {
+  margin-top: 15px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .copyright a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+#modal.open {
+  display: flex;
+}
+
+#modal .modal-container {
+  width: 900px;
+  max-width: calc(100% - 32px);
+  min-height: 300px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 4px;
+  animation: modalFadeIn ease 1s;
+}
+
+#modal .modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  padding: 16px;
+  cursor: pointer;
+}
+
+#modal .modal-close:hover {
+  opacity: 0.6;
+  color: #000;
+  background-color: #fff;
+}
+
+#modal .modal-header {
+  background-color: #009688;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+#modal .modal-header i {
+  margin-right: 16px;
+}
+
+#modal .modal-body {
+  padding: 16px;
+}
+
+#modal .modal-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#modal .modal-input {
+  font-size: 15px;
+  padding: 8px 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  width: 100%;
+  border-radius: 4px;
+}
+
+#modal .buy-tickets {
+  background-color: #009688;
+  border: none;
+  color: #fff;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+#modal .buy-tickets:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+#modal .modal-footer {
+  padding: 16px;
+  text-align: right;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* pc */
+@media (min-width: 1024px) {
+}
+
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+  .contact-form {
+    margin-top: 16px;
+  }
+
+  .s-mt-8 {
+    margin-top: 8px !important;
+  }
+}
+
+/* tablet and mobile */
+@media (min-width: 1023px) {
+  .btn {
+    padding: 15px 16px;
+  }
+
+  .contact-form .form-control {
+    padding: 15px;
+  }
+
+  .contact-info {
+    line-height: 2;
+  }
+
+  .socials-list {
+    font-size: 48px;
+  }
+
+  .socials-list a {
+    margin: 0 8px;
+  }
+
+  .copyright a {
+    padding: 12px 0;
+    display: inline-block;
+  }
+}
+
+/* mobile */
+@media (max-width: 739px) {
+  #header {
+    overflow: hidden;
+  }
+
+  #header .mobile-menu-btn {
+    display: block;
+  }
+
+  #header .search-btn {
+    display: none;
+  }
+
+  #nav {
+    display: block;
+  }
+
+  #nav > li {
+    display: block;
+  }
+
+  #nav > li:first-child {
+    display: inline-block;
+  }
+
+  #nav .subnav {
+    position: initial;
+    background-color: #333;
+  }
+
+  #nav .subnav a {
+    color: #fff;
+    padding: 5px 41px;
+  }
+
+  #content .member-img {
+    width: 60%;
+  }
+
+  .contact-form {
+    margin-top: 16px;
+  }
+
+  .s-mt-8 {
+    margin-top: 8px !important;
+  }
+  .s-col-full,
+  .s-full-width {
+    width: 100% !important;
+  }
+}

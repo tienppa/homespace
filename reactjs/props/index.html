@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Props in ReactJS</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+        Props
+        - React elements
+            Sử dụng props giống với attribute của thẻ HTML
+            2 props className, for => classNameName, htmlFor
+            Phải tuân theo quy ước có sẵn
+        - React components
+            Sử dụng props giống như đối số cho Component
+            Tự do đặt tên props:
+                Đặt theo camelCase
+                Có thể bao gồm dấu gạch ngang dưới
+        - Chú ý
+            Props "key" là props đặc biệt
+            Props cơ bản là đối số của Component
+            => Props có thể là bất kì kiểu dữ liệu gì
+            Sử dụng destructuring
+     -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function PostItem(props) {
+        return (
+          <div className="post-item">
+            <h2 className="post-title">{props.title}</h2>
+            <p className="post-desc">{props.desc}</p>
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <div className="wrapper">
+            <PostItem title="JavaScript" desc="Lập trình hướng đối tượng" />
+            <PostItem title="C#" desc="Lập trình hướng đối tượng" />
+            <PostItem title="Ruby" desc="Lập trình hướng đối tượng" />
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
