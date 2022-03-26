@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs UI</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="tabs-wrapper">
+        <div class="tabs">
+          <div class="tab-item active">
+            <i class="tab-icon fas fa-code"></i>
+            React
+          </div>
+          <div class="tab-item">
+            <i class="tab-icon fas fa-cog"></i>
+            Angular
+          </div>
+          <div class="tab-item">
+            <i class="tab-icon fas fa-plus-circle"></i>
+            Ember
+          </div>
+          <div class="tab-item">
+            <i class="tab-icon fas fa-pen-nib"></i>
+            Vue.JS
+          </div>
+          <div class="line"></div>
+        </div>
+
+        <!-- tab content -->
+        <div class="tab-content">
+          <div class="tab-pane active">
+            <h2>React</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Asperiores quia blanditiis dolores sint iusto, illo doloremque
+              inventore molestiae nihil facere, porro tempora velit vero fugiat!
+              Enim reiciendis nam voluptatibus vel.
+            </p>
+          </div>
+
+          <div class="tab-pane">
+            <h2>Angular</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Asperiores quia blanditiis dolores sint iusto, illo doloremque
+              inventore molestiae nihil facere, porro tempora velit vero fugiat!
+              Enim reiciendis nam voluptatibus vel.
+            </p>
+          </div>
+          <div class="tab-pane">
+            <h2>Ember</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Asperiores quia blanditiis dolores sint iusto, illo doloremque
+              inventore molestiae nihil facere, porro tempora velit vero fugiat!
+              Enim reiciendis nam voluptatibus vel.
+            </p>
+          </div>
+          <div class="tab-pane">
+            <h2>Vue.JS</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Asperiores quia blanditiis dolores sint iusto, illo doloremque
+              inventore molestiae nihil facere, porro tempora velit vero fugiat!
+              Enim reiciendis nam voluptatibus vel.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const $ = document.querySelector.bind(document);
+      const $$ = document.querySelectorAll.bind(document);
+
+      const tabs = $$(".tab-item");
+      const panes = $$(".tab-pane");
+
+      const tabActive = $(".tab-item.active");
+      const line = $(".tabs .line");
+      line.style.left = tabActive.offsetLeft + "px";
+      line.style.width = tabActive.offsetWidth + "px";
+
+      tabs.forEach((tab, index) => {
+        const pane = panes[index];
+
+        tab.onclick = function () {
+          // remove .active before add .active in tabs
+          $(".tab-item.active").classList.remove("active");
+          this.classList.add("active");
+
+          line.style.left = this.offsetLeft + "px";
+          line.style.width = this.offsetWidth + "px";
+
+          // remove .active before add .active in panes
+          $(".tab-pane.active").classList.remove("active");
+          pane.classList.add("active");
+        };
+      });
+    </script>
+  </body>
+</html>
