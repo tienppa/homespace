@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/780d2dd713.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/logo.jpg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="player">
+      <div class="dashboard">
+        <header>
+          <h4>Now playing:</h4>
+          <h2>String 57th & 9th</h2>
+        </header>
+
+        <div class="cd">
+          <div
+            class="cd-thumb"
+            style="background-image: url('./assets/img/logo.jpg')"
+          ></div>
+        </div>
+
+        <div class="control">
+          <div class="btn btn-repeat">
+            <i class="fas fa-redo"></i>
+          </div>
+
+          <div class="btn btn-prev">
+            <i class="fas fa-step-backward"></i>
+          </div>
+
+          <div class="btn btn-toggle-play">
+            <i class="fas fa-pause icon-pause"></i>
+            <i class="fas fa-play icon-play"></i>
+          </div>
+
+          <div class="btn btn-next">
+            <i class="fas fa-step-forward"></i>
+          </div>
+
+          <div class="btn btn-random">
+            <i class="fas fa-random"></i>
+          </div>
+        </div>
+
+        <input
+          id="progress"
+          class="progress"
+          type="range"
+          step="1"
+          value="0"
+          min="0"
+          max="100"
+        />
+
+        <audio id="audio" src=""></audio>
+      </div>
+
+      <div class="playlist"></div>
+    </div>
+    <script>
+      const $ = document.querySelector.bind(document);
+      const $$ = document.querySelectorAll.bind(document);
+
+      const cd = $(".cd");
+      const heading = $("header h2");
+      const cdThumb = $(".cd-thumb");
+      const audio = $("#audio");
+      const playBtn = $(".btn-toggle-play");
+      const player = $(".player");
+      const progress = $(".progress");
+
+      const app = {
+        currentIndex: 0,
+        isPlaying: false,
+        songs: [
+          {
+            name: "Awful",
+            singer: "Josh pan",
+            path: "./assets/music/Awful.mp3",
+            image: "./assets/img/img_1.jpg",
+          },
+          {
+            name: "Brooklyn and the Bridge",
+            singer: "Nico Staf",
+            path: "./assets/music/Brooklyn_and_the_Bridge.mp3",
+            image: "./assets/img/img_2.jpg",
+          },
+          {
+            name: "Fast and Run",
+            singer: "Nico Staf",
+            path: "./assets/music/Fast_and_Run.mp3",
+            image: "./assets/img/img_3.jpg",
+          },
+          {
+            name: "Awful",
+            singer: "Josh pan",
+            path: "./assets/music/Awful.mp3",
+            image: "./assets/img/img_1.jpg",
+          },
+          {
+            name: "Brooklyn and the Bridge",
+            singer: "Nico Staf",
+            path: "./assets/music/Brooklyn_and_the_Bridge.mp3",
+            image: "./assets/img/img_2.jpg",
+          },
+          {
+            name: "Fast and Run",
+            singer: "Nico Staf",
+            path: "./assets/music/Fast_and_Run.mp3",
+            image: "./assets/img/img_3.jpg",
+          },
+          {
+            name: "Awful",
+            singer: "Josh pan",
+            path: "./assets/music/Awful.mp3",
+            image: "./assets/img/img_1.jpg",
+          },
+          {
+            name: "Brooklyn and the Bridge",
+            singer: "Nico Staf",
+            path: "./assets/music/Brooklyn_and_the_Bridge.mp3",
+            image: "./assets/img/img_2.jpg",
+          },
+          {
+            name: "Fast and Run",
+            singer: "Nico Staf",
+            path: "./assets/music/Fast_and_Run.mp3",
+            image: "./assets/img/img_3.jpg",
+          },
+          {
+            name: "Awful",
+            singer: "Josh pan",
+            path: "./assets/music/Awful.mp3",
+            image: "./assets/img/img_1.jpg",
+          },
+          {
+            name: "Brooklyn and the Bridge",
+            singer: "Nico Staf",
+            path: "./assets/music/Brooklyn_and_the_Bridge.mp3",
+            image: "./assets/img/img_2.jpg",
+          },
+          {
+            name: "Fast and Run",
+            singer: "Nico Staf",
+            path: "./assets/music/Fast_and_Run.mp3",
+            image: "./assets/img/img_3.jpg",
+          },
+          {
+            name: "Awful",
+            singer: "Josh pan",
+            path: "./assets/music/Awful.mp3",
+            image: "./assets/img/img_1.jpg",
+          },
+          {
+            name: "Brooklyn and the Bridge",
+            singer: "Nico Staf",
+            path: "./assets/music/Brooklyn_and_the_Bridge.mp3",
+            image: "./assets/img/img_2.jpg",
+          },
+          {
+            name: "Fast and Run",
+            singer: "Nico Staf",
+            path: "./assets/music/Fast_and_Run.mp3",
+            image: "./assets/img/img_3.jpg",
+          },
+          {
+            name: "Awful",
+            singer: "Josh pan",
+            path: "./assets/music/Awful.mp3",
+            image: "./assets/img/img_1.jpg",
+          },
+          {
+            name: "Brooklyn and the Bridge",
+            singer: "Nico Staf",
+            path: "./assets/music/Brooklyn_and_the_Bridge.mp3",
+            image: "./assets/img/img_2.jpg",
+          },
+          {
+            name: "Fast and Run",
+            singer: "Nico Staf",
+            path: "./assets/music/Fast_and_Run.mp3",
+            image: "./assets/img/img_3.jpg",
+          },
+        ],
+
+        render: function () {
+          const htmls = this.songs.map((song) => {
+            return `
+              <div class="song">
+                <div
+                  class="thumb"
+                  style="background-image: url('${song.image}')">
+                </div>
+
+                <div class="body">
+                  <h3 class="title">${song.name}</h3>
+                  <p class="author">${song.singer}</p>
+                </div>
+
+                <div class="option btn">
+                  <i class="fas fa-ellipsis-h"></i>
+                </div>
+              </div>
+        `;
+          });
+
+          $(".playlist").innerHTML = htmls.join("");
+        },
+
+        defineProperties: function () {
+          Object.defineProperty(this, "currentSong", {
+            get: function () {
+              return this.songs[this.currentIndex];
+            },
+          });
+        },
+
+        handleEvents: function () {
+          const cdWidth = cd.offsetWidth;
+
+          // zoomIn / zoomOut cd
+          document.onscroll = function () {
+            const scrollTop =
+              window.scrollY || document.documentElement.scrollTop;
+
+            const newCdWidth = cdWidth - scrollTop;
+
+            cd.style.width = newCdWidth > 0 ? newCdWidth + "px" : 0;
+
+            cd.style.opacity = newCdWidth / cdWidth;
+          };
+
+          // play
+          playBtn.onclick = function () {
+            if (app.isPlaying) {
+              audio.pause();
+            } else {
+              audio.play();
+            }
+          };
+
+          audio.onplay = function () {
+            app.isPlaying = true;
+            player.classList.add("playing");
+          };
+
+          audio.onpause = function () {
+            app.isPlaying = false;
+            player.classList.remove("playing");
+          };
+
+          audio.ontimeupdate = function () {
+            if (audio.duration) {
+              const per = Math.floor(
+                (audio.currentTime / audio.duration) * 100
+              );
+              progress.value = per;
+            }
+          };
+
+          progress.onchange = function (e) {
+            audio.currentTime = (audio.duration / 100) * e.target.value;
+          };
+        },
+
+        loadCurrentSong: function () {
+          heading.textContent = this.currentSong.name;
+          cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
+          audio.src = this.currentSong.path;
+        },
+
+        start: function () {
+          // define some properties
+          this.defineProperties();
+
+          // listen / process some events(DOM events)
+          this.handleEvents();
+
+          // load song
+          this.loadCurrentSong();
+
+          // render playlist
+          this.render();
+        },
+      };
+
+      app.start();
+
+      // Render songs
+      // Scroll top
+      // Play / pause / seek
+      // CD rotate
+      // Next / prev
+      // Random
+      // Next / Repeat when ended
+      // Active song
+      // Scroll active song into view
+      // Play song when click
+    </script>
+  </body>
+</html>

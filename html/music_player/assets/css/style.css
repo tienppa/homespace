@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(90deg, #f0f2fd, #f5f5f5);
+}
+
+.player {
+  width: 100%;
+  max-width: 375px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.dashboard {
+  width: 100%;
+  text-align: center;
+  max-width: 375px;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
+}
+
+header {
+  margin: 16px 0;
+}
+
+header h4 {
+  color: #f1474d;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+header h2 {
+  color: #000;
+  font-size: 20px;
+}
+
+.cd {
+  width: 200px;
+  display: flex;
+  margin: auto;
+}
+
+.cd-thumb {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px #eee;
+  background-position: center;
+  margin: auto;
+}
+
+.control {
+  width: 100%;
+  margin: 20px 0 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  width: 50px;
+  height: 50px;
+  color: #555;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-toggle-play {
+  color: #fff;
+  background-color: #f1474d;
+  border-radius: 50%;
+}
+
+.progress {
+  -webkit-appearance: none;
+  width: calc(100% - 20px);
+  height: 10px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+.progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 10px;
+  border-radius: 6px;
+  background: #f1474d;
+  cursor: pointer;
+}
+
+.playlist {
+  min-height: 230px;
+  background-color: #eee;
+  padding: 10px;
+  margin-top: 390px;
+}
+
+.playlist::-webkit-scrollbar {
+  display: none;
+}
+
+.song {
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-position: center;
+  margin-right: 10px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+}
+
+.author {
+  font-size: 12px;
+  color: #555;
+}
+
+.option {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-10px, -50%);
+}
+
+.icon-pause {
+  display: none;
+}
+
+.playing .btn-toggle-play .icon-play {
+  display: none;
+}
+
+.playing .btn-toggle-play .icon-pause {
+  display: block;
+}
