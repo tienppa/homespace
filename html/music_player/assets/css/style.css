@@ -109,10 +109,11 @@ header h2 {
 }
 
 .playlist {
-  min-height: 230px;
+  max-height: 300px;
   background-color: #eee;
   padding: 10px;
   margin-top: 390px;
+  overflow-y: auto;
 }
 
 .playlist::-webkit-scrollbar {
@@ -126,6 +127,10 @@ header h2 {
   border-radius: 6px;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+.song:active {
+  opacity: 0.8;
 }
 
 .thumb {
@@ -170,4 +175,16 @@ header h2 {
 
 .playing .btn-toggle-play .icon-pause {
   display: block;
+}
+
+.btn-random.active i {
+  color: #f1474d;
+}
+
+.btn-repeat.active i {
+  color: #f1474d;
+}
+
+.song.active {
+  background-color: rgba(241, 71, 77, 0.5);
 }
