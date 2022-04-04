@@ -105,4 +105,5 @@ console.log(out);
 var elements = [1, 2, 4, 5, 6];
 var total = elements.reduce(function (total, value) {
   return total + value;
-}, 0);
+}, 10);
+console.log(total);

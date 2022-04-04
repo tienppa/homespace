@@ -1,0 +1,21 @@
+IIFE - Immediately Invoked Function Expression
+Function expression được gọi ngay lập tức
+
+1. IIFE trông thế nào?
+2. Dùng ; trước IIFE
+3. IIFE là hàm "private"
+4. Sử dụng IIFE khi nào?
+5. How to make IIFE.
+6. Example
+
+
+-----------------------------------------------
+Scope
+- Types:
+    + Global: toàn cầu
+    + Code block: let, const
+    + Local scope: var, function
+- Khi gọi mỗi hàm luôn có 1 phạm vi mới được tạo 
+- Các hàm có thể truy cập các biến được khai báo
+trong phạm vi của nó và bên ngoài
+- Cách thức một biến được truy cập    

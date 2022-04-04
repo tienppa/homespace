@@ -83,3 +83,12 @@ getComments()
   .catch(function (error) {
     console.log(error);
   });
+
+var url = "https://jsonplaceholder.typicode.com/posts";
+fetch(url)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (posts) {
+    console.log(posts);
+  });

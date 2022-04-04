@@ -10,11 +10,11 @@ var array = [1, 2, 3, 4, 6, 7];
 function findMax(array) {
   var flag = array[0];
   for (let index = 0; index < array.length; index++) {
-    if (array[index] > flag) {
+    if (array[index] < flag) {
       flag = array[index];
     }
   }
-  return flag;
+  return `Max : ${flag}`;
 }
 console.log(findMax(array));
 
