@@ -1,0 +1,79 @@
+<div class="container px-4">
+  <p>Hello {{ name }}</p>
+  <input type="text" class="input-control" [(ngModel)]="name">
+  <input type="text" class="input-control" [ngModel]="name" (ngModelChange)="name = $event">
+
+  <!-- 
+  #toggleComp la instance cua ToggleComponent
+ -->
+  <div class="d-flex justify-content-center align-items-center mx-2 my-2">
+    <toggle #toggleComp [(checked)]="isChecked"></toggle>
+    <button class="btn btn-primary" (click)="toggleComp.toggle()">Toggle me</button>
+  </div>
+  <!-- 
+  [] data binding
+  () event binding
+ -->
+
+  <tab-group [(activeIndex)]="currentIndex">
+    <tab-panel title="First tab">First tab content</tab-panel>
+    <tab-panel title="Second tab">Second tab content</tab-panel>
+    <tab-panel title="Third tab">Third tab content</tab-panel>
+    <tab-panel title="Fourth tab">Fourth tab content</tab-panel>
+  </tab-group>
+
+  <br>
+  <button class="btn btn-warning my-4" (click)="showTab4 = !showTab4">Toggle tab 4</button>
+  <tab-bs-group [(activeIndex)]="currentIndex">
+    <tab-panel title=" First tab">
+      <ng-template tabContent>
+        First tab content
+        <counter></counter>
+      </ng-template>
+    </tab-panel>
+
+    <tab-panel title="Second tab">
+      <ng-template tabContent>
+        Second tab content
+        <counter></counter>
+      </ng-template>
+    </tab-panel>
+
+    <tab-panel title="Third tab">
+      <ng-template tabContent>
+        Third tab content
+        <counter></counter>
+      </ng-template>
+    </tab-panel>
+
+    <tab-panel title="Fourth tab" *ngIf="showTab4">
+      <ng-template tabContent>
+        Fourth tab content
+        <counter></counter>
+      </ng-template>
+    </tab-panel>
+  </tab-bs-group>
+  <hr>
+  <p>{{ currentDate | date}}</p>
+  <p>{{ currentDate | date:'shortDate'}}</p>
+  <p>{{ currentDate | date:'mediumDate'}}</p>
+  <p>{{ currentDate | date:'fullDate'}}</p>
+  <p>{{ currentDate | date:'yyyy-MM-dd'}}</p>
+  <p>{{ "tien dat" | uppercase }}</p>
+
+  <p>{{ interval$ | async }}</p>
+  <hr>
+  <p> {{ addr | formatAddress }}</p>
+  <hr>
+  Full user list:
+  <ul>
+    <li *ngFor="let user of users">{{user.name}}</li>
+  </ul>
+  <hr>
+  Adult user list:
+  <ul>
+    <li *ngFor="let user of users | adult">{{user.name + " - " + user.age }}</li>
+  </ul>
+  <button class="btn btn-info" (click)="addUser()">Add User</button>
+  <hr>
+</div>
