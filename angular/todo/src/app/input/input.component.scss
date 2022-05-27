@@ -1,0 +1,30 @@
+.input-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  input {
+    width: 330px;
+    height: 40px;
+    padding: 0 10px;
+    margin-right: 10px;
+    border: 1px solid #888;
+    border-radius: 2px;
+    outline: none;
+  }
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #5daef6;
+    border: 2px solid #5daef6;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  button:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+  }
+}

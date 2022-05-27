@@ -1,0 +1,17 @@
+<ul>
+    <ng-container *ngIf="tasks.length > 0;else noTasks">
+        <li *ngFor="let task of tasks; index as idx" (click)="completeTask(idx)" [class]="'li'+idx"
+            [class]="tasks[idx]?.done === true ? 'success' : ''">
+            <p>
+                {{task.name}}
+                <ng-container *ngIf="tasks[idx].done === true">
+                    <span> (completed)</span>
+                </ng-container>
+            </p>
+            <button type="button" (click)="removeTask(idx)">x</button>
+        </li>
+    </ng-container>
+</ul>
+<ng-template #noTasks>
+    Nothing todo!
+</ng-template>

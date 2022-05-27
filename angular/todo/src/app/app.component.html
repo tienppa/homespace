@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>To Do List</h1>
+  <p>Enter text into the input field to add items to your
+    list.</p>
+  <p>Click the "X" to remove the item from your list.</p>
+  <p>Click the item to mark it as complete</p>
+  <app-input (submit)="addTask($event)"></app-input>
+  <app-todo-list [tasks]="tasks"></app-todo-list>
+</div>

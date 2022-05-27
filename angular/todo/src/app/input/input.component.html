@@ -1,0 +1,4 @@
+<div class="input-wrap">
+    <input type="text" #inputValue (keyup.enter)="addNewTask(inputValue.value)">
+    <button type="button" (click)="addNewTask(inputValue.value)">+</button>
+</div>
