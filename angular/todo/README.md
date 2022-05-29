@@ -1,5 +1,7 @@
 # Todo
 
+![todo](https://user-images.githubusercontent.com/98750646/170716960-14823981-ae65-4090-87de-f627bd267c37.gif)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
 ## Development server
