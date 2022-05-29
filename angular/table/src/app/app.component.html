@@ -1,0 +1,40 @@
+<div class="container">
+  <h1 class="h1">A simple web app</h1>
+  <div class="row">
+    <div class="col-auto">
+      <h2 class="">Other by</h2>
+    </div>
+    <div class="col-auto">
+      <select class="form-select" aria-label="Default select example">
+        <option value="-1">Select field to sort</option>
+        <option value="{{ s.value }}" *ngFor="let s of options">{{ s.name }}</option>
+      </select>
+    </div>
+  </div>
+  <table class="table table-hover border-top">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Birthday</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

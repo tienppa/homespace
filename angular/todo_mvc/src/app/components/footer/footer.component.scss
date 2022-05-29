@@ -1,0 +1,48 @@
+.footer {
+  position: relative;
+  height: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: 0;
+  //   left: 0;
+  //   height: 50px;
+  //   overflow: hidden;
+  //   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px#f6f6f6,
+  //     0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px#f6f6f6,
+  //     0 17px 2px -6px rgba(0, 0, 0, 0.2);
+  // }
+
+  & .filter-btn {
+    padding: 5px 10px;
+    border-radius: 0.25rem;
+    transition: 250ms all ease-in;
+    outline: none;
+    margin-right: 5px;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+      border-color: #deb887;
+      background-color: beige;
+    }
+  }
+
+  & .clear-completed-btn {
+    //   todo: change to hidden when implement completed todos
+    visibility: visible;
+
+    &.visible {
+      visibility: visible;
+    }
+  }
+
+  & .items-count {
+    padding-left: 10px;
+  }
+}

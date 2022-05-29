@@ -1,0 +1,7 @@
+html {
+  font-family: "Lato", sans-serif;
+}
+
+.table > :not(:first-child) {
+  border-top: 2px;
+}
