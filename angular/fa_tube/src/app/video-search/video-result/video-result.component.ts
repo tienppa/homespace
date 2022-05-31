@@ -20,4 +20,8 @@ export class VideoResultComponent implements OnInit {
   mergeUrl(param: string): string {
     return 'https://www.youtube.com/watch?v=' + param;
   }
+
+  searchDetail(param: string): void {
+    this.videoService.fetchDetail(param);
+  }
 }

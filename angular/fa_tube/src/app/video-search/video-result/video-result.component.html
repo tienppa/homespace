@@ -1,4 +1,4 @@
-<div class="video-result border p-4 mb-4">
+<div class="video-result border p-4 mb-4" *ngIf="video$ | async">
     <div class="card mb-3" *ngFor="let item of video$ | async;">
         <div class="row g-0">
             <div class="col-md-3 d-flex justify-content-center align-items-center">
@@ -11,9 +11,9 @@
                     <p>Channel Title: {{ item.snippet.channelTitle }}</p>
                     <p>Publish Time: {{ item.snippet.publishTime }}</p>
                     <p>
-                        <a class="stretched-link" [href]="mergeUrl(item.snippet.thumbnails.default.url)">
+                        <button class="btn stretched-link" (click)="searchDetail(item.id.videoId)">
                             Link item detail
-                        </a>
+                        </button>
                     </p>
                 </div>
             </div>

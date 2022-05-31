@@ -1,7 +1,7 @@
 <div class="container justify-content-center">
   <div class="wrapper">
     <div class="my-3">
-      <input type="text" #inputValue class="form-control" [(ngModel)]="textContent" (keydown.enter)="searchVideo()">
+      <input type="text" #inputValue class="form-control" [(ngModel)]="textContent" (keyup.enter)="searchVideo()">
     </div>
 
     <div class="dropdown">
@@ -10,18 +10,19 @@
         <i class="fas fa-sort-amount-down"></i>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li *ngFor="let item of filter"><button (click)="setFilter(item)" class="dropdown-item"
+            [class.active]="filtered === item">{{
+            item
+            }}</button></li>
       </ul>
     </div>
 
 
-    <div class="card" *ngIf="hasList$ | async">
+    <!-- <div class="card" *ngIf="hasList$ | async">
       <div class="card-body">
         No video to find
       </div>
-    </div>
+    </div> -->
 
 
     <app-video-search></app-video-search>

@@ -11,22 +11,30 @@ import { map } from 'rxjs/operators';
 export class AppComponent implements OnInit, AfterViewInit {
   textContent: string = '';
   hasList$!: Observable<boolean>;
+  filter = ['title', 'rating', 'viewCount', 'videoCount', 'data'];
+  filtered: string = 'title';
 
   constructor(private videoService: VideoService) {}
 
   ngOnInit(): void {
-    this.videoService.fetch('music');
+    document.querySelector('.btn-none')?.classList.add('btn-primary');
   }
 
   ngAfterViewInit(): void {
-    this.videoService.fetch('music');
+    this.videoService.fakeData();
+  }
+
+  setFilter(param: string) {
+    this.filtered = param;
   }
 
   searchVideo() {
     if (this.textContent.trim() === '') {
       return;
     }
-    this.videoService.fetch(this.textContent);
-    this.hasList$ = this.videoService.length$.pipe(map((length) => length < 0));
+    this.videoService.fetch(this.textContent, this.filtered);
+    this.hasList$ = this.videoService.length$.pipe(
+      map((length) => length >= 0)
+    );
   }
 }

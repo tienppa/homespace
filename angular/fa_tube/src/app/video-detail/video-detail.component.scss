@@ -2,3 +2,11 @@
   background-color: #dae8fc;
   border: 1px solid #9cb7c8;
 }
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
