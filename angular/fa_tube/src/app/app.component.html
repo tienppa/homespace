@@ -16,9 +16,13 @@
       </ul>
     </div>
 
-    <ng-template *ngIf="hasList$ | async">
-      No video to find
-    </ng-template>
+
+    <div class="card" *ngIf="hasList$ | async">
+      <div class="card-body">
+        No video to find
+      </div>
+    </div>
+
 
     <app-video-search></app-video-search>
 

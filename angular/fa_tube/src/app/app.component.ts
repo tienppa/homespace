@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { VideoService } from './services/video.service';
 import { map } from 'rxjs/operators';
@@ -8,14 +8,18 @@ import { map } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   textContent: string = '';
   hasList$!: Observable<boolean>;
 
   constructor(private videoService: VideoService) {}
 
   ngOnInit(): void {
-    this.videoService.fetch('');
+    this.videoService.fetch('music');
+  }
+
+  ngAfterViewInit(): void {
+    this.videoService.fetch('music');
   }
 
   searchVideo() {
@@ -23,6 +27,6 @@ export class AppComponent implements OnInit {
       return;
     }
     this.videoService.fetch(this.textContent);
-    this.hasList$ = this.videoService.length$.pipe(map((length) => length > 0));
+    this.hasList$ = this.videoService.length$.pipe(map((length) => length < 0));
   }
 }

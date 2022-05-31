@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { VideoService } from 'src/app/services/video.service';
 
 @Component({
@@ -7,13 +8,16 @@ import { VideoService } from 'src/app/services/video.service';
   styleUrls: ['./video-result.component.scss'],
 })
 export class VideoResultComponent implements OnInit {
-  @Input() item!: any[];
-
-  title: string = '';
+  video$!: Observable<any[]>;
+  url = 'https://www.youtube.com/watch?v=';
 
   constructor(private videoService: VideoService) {}
 
   ngOnInit(): void {
-    console.log(typeof this.item);
+    this.video$ = this.videoService.video$;
+  }
+
+  mergeUrl(param: string): string {
+    return 'https://www.youtube.com/watch?v=' + param;
   }
 }

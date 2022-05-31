@@ -17,7 +17,7 @@ export class VideoService {
   video$: Observable<any[]> = this.displayList.asObservable();
   length$: Observable<number> = this.lengthSubject.asObservable();
 
-  private API_KEY = 'AIzaSyC1f6v2BAlITPcFtkVq-la1znRbt_Vo6oo';
+  private API_KEY = 'AIzaSyD1kMuMOizKfTQSudPQi8iVtRmTzsAcTno';
 
   private URL = 'https://youtube.googleapis.com/youtube/v3/search';
 
