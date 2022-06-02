@@ -61,8 +61,9 @@ export class FormGroupComponent implements OnInit {
   onSubmit() {
     this.submited = true;
     // console.log(this.contactForm.get('arremail')?.errors);
+    // Anh help em chỗ này với em không lấy dược error của arremail bên trên em có truyền validator rồi á
     console.log(this.arremails);
-    console.log(this.name);
+    // console.log(this.name);
     if (this.contactForm.invalid) return;
   }
 
