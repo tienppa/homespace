@@ -1,0 +1,64 @@
+<div class="card my-5 mx-auto" style="width: 700px;max-width: 100%;">
+    <div class="card-header text-center">
+        Contact us
+    </div>
+    <div class="card-body">
+        <form class="" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="name" class="col-form-label d-md-flex justify-content-end">Name</label>
+                </div>
+                <div class="col-md-9">
+                    <input id="name" name="name" formControlName="name" type="text" class="form-control w-100"
+                        placeholder="Your name" [class.is-invalid]="submited && f['name'].errors">
+                    <div *ngIf="submited && f['name'].errors" class="invalid-feedback">
+                        Please enter a name.
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="email" class="col-form-label d-md-flex justify-content-end">Your E-mail</label>
+                </div>
+                <div class="col-md-9">
+                    <input id="email" name="email" formControlName="email" type="email" class="form-control w-100"
+                        placeholder="Your email" [class.is-invalid]="submited && f['email'].errors">
+                    <div *ngIf="submited && f['email'].errors" class="invalid-feedback">
+                        <div *ngIf="f['email'].errors?.['required']">Please enter an email</div>
+                        <div *ngIf="f['email'].errors?.['email']">Email is invalid</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="phone" class="col-form-label d-md-flex justify-content-end">Your Phone</label>
+                </div>
+                <div class="col-md-9">
+                    <input id="phone" name="phone" formControlName="phone" type="text" class="form-control w-100"
+                        placeholder="Your phone" [class.is-invalid]="submited && f['phone'].errors">
+                    <div *ngIf="submited && f['phone'].errors" class="invalid-feedback">
+                        <div *ngIf="f['phone'].errors?.['required']">Please enter a phone</div>
+                        <div *ngIf="f['phone'].errors?.['pattern']">Phone is invalid</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="message" class="col-form-label d-md-flex justify-content-end">Your Message</label>
+                </div>
+                <div class="col-md-9">
+                    <textarea id="message" name="message" formControlName="message" class="form-control" rows="4"
+                        placeholder="Please enter your message here"
+                        [class.is-invalid]="submited && f['message'].errors"></textarea>
+                    <div *ngIf="submited && f['message'].errors" class="invalid-feedback">
+                        Please enter a message.
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 float-md-end">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
