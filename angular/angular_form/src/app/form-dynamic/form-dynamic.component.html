@@ -1,0 +1,78 @@
+<div class="card my-5 mx-auto" style="width: 700px;max-width: 100%;">
+    <div class="card-header text-center">
+        Contact us
+    </div>
+    <div class="card-body">
+        <form class="" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="name" class="col-form-label d-md-flex justify-content-end">Name</label>
+                </div>
+                <div class="col-md-9">
+                    <input id="name" name="name" formControlName="name" type="text" class="form-control w-100"
+                        placeholder="Your name" [class.is-invalid]="submited && f['name'].errors">
+                    <div *ngIf="submited && f['name'].errors" class="invalid-feedback">
+                        Please enter a name.
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="email" class="col-form-label d-md-flex justify-content-end">Your E-mail</label>
+                </div>
+                <div class="col-md-7" formArrayName="emails">
+                    <ng-container *ngFor="let email of emails.controls;index as i" [formGroupName]="i">
+                        <input class="form-control" id="{{ 'email' + i }}" formControlName="email" type="email"
+                            placeholder="{{'Your email ' + (i + 1)}}"
+                            [class.is-invalid]="submited && (emails.controls[i].get('email')?.hasError('required') || emails.controls[i].get('email')?.hasError('email'))">
+                        <div *ngIf="submited && f['emails'].errors" class="invalid-feedback">
+                            <div *ngIf="emails.controls[i].get('email')?.hasError('required')">Please enter an email
+                            </div>
+                            <div *ngIf="emails.controls[i].get('email')?.hasError('email')">Email is invalid</div>
+                        </div>
+                    </ng-container>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary" (click)="addEmail()">Add</button>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="phone" class="col-form-label d-md-flex justify-content-end">Your Phone</label>
+                </div>
+                <div class="col-md-7" formArrayName="phones">
+                    <ng-container *ngFor="let phone of phones.controls; let i = index" [formGroupName]="i">
+                        <input class="form-control" id="{{'phone' + i }}" type="text" formControlName="phone"
+                            placeholder="Your phone {{i + 1}}"
+                            [class.is-invalid]="submited && (phones.controls[i].get('phone')?.hasError('required') || phones.controls[i].get('phone')?.hasError('pattern'))">
+                        <div *ngIf="submited && f['phones'].errors" class="invalid-feedback">
+                            <div *ngIf="phones.controls[i].get('phone')?.hasError('required')">Please enter a phone
+                            </div>
+                            <div *ngIf="phones.controls[i].get('phone')?.hasError('pattern')">Phone is invalid</div>
+                        </div>
+                    </ng-container>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary" (click)="addPhone()">Add</button>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="message" class="col-form-label d-md-flex justify-content-end">Your Message</label>
+                </div>
+                <div class="col-md-9">
+                    <textarea id="message" name="message" formControlName="message" class="form-control" rows="4"
+                        placeholder="Please enter your message here"
+                        [class.is-invalid]="submited && f['message'].errors"></textarea>
+                    <div *ngIf="submited && f['message'].errors" class="invalid-feedback">
+                        Please enter a message.
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 float-md-end">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

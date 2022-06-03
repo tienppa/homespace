@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormDynamicComponent } from './form-dynamic/form-dynamic.component';
 import { FormGroupComponent } from './form-group/form-group.component';
 import { FormComponent } from './form/form.component';
 
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'form-group',
     component: FormGroupComponent,
+  },
+  {
+    path: 'dynamic-form',
+    component: FormDynamicComponent,
   },
 ];
 
