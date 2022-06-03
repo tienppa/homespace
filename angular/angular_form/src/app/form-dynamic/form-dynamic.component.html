@@ -24,11 +24,11 @@
                     <ng-container *ngFor="let email of emails.controls;index as i" [formGroupName]="i">
                         <input class="form-control" id="{{ 'email' + i }}" formControlName="email" type="email"
                             placeholder="{{'Your email ' + (i + 1)}}"
-                            [class.is-invalid]="submited && f['emails'].errors">
+                            [class.is-invalid]="submited && (emails.controls[i].get('email')?.hasError('required') || emails.controls[i].get('email')?.hasError('email'))">
                         <div *ngIf="submited && f['emails'].errors" class="invalid-feedback">
-                            <div *ngIf="emails.controls[0].get('email')?.hasError('required')">Please enter an email
+                            <div *ngIf="emails.controls[i].get('email')?.hasError('required')">Please enter an email
                             </div>
-                            <div *ngIf="emails.controls[0].get('email')?.hasError('pattern')">Email is invalid</div>
+                            <div *ngIf="emails.controls[i].get('email')?.hasError('email')">Email is invalid</div>
                         </div>
                     </ng-container>
                 </div>
@@ -43,11 +43,12 @@
                 <div class="col-md-7" formArrayName="phones">
                     <ng-container *ngFor="let phone of phones.controls; let i = index" [formGroupName]="i">
                         <input class="form-control" id="{{'phone' + i }}" type="text" formControlName="phone"
-                            placeholder="Your phone {{i + 1}}" [class.is-invalid]="submited && f['phones'].errors">
+                            placeholder="Your phone {{i + 1}}"
+                            [class.is-invalid]="submited && (phones.controls[i].get('phone')?.hasError('required') || phones.controls[i].get('phone')?.hasError('pattern'))">
                         <div *ngIf="submited && f['phones'].errors" class="invalid-feedback">
-                            <div *ngIf="phones.controls[0].get('phone')?.hasError('required')">Please enter a phone
+                            <div *ngIf="phones.controls[i].get('phone')?.hasError('required')">Please enter a phone
                             </div>
-                            <div *ngIf="phones.controls[0].get('phone')?.hasError('pattern')">Phone is invalid</div>
+                            <div *ngIf="phones.controls[i].get('phone')?.hasError('pattern')">Phone is invalid</div>
                         </div>
                     </ng-container>
                 </div>

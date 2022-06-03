@@ -29,14 +29,14 @@ export class FormDynamicComponent implements OnInit {
       ),
       phones: this.fb.array(
         [this.createPhone()],
-        [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]
+        [Validators.required, Validators.pattern('^((\\+84-?)|0)?[0-9]{10}$')]
       ),
     });
   }
 
   createEmail(): FormGroup {
     return this.fb.group({
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
     });
   }
 
@@ -50,7 +50,10 @@ export class FormDynamicComponent implements OnInit {
 
   createPhone(): FormGroup {
     return this.fb.group({
-      phone: ['', [Validators.required]],
+      phone: [
+        '',
+        [Validators.required, Validators.pattern('^((\\+84-?)|0)?[0-9]{10}$')],
+      ],
     });
   }
 
@@ -72,6 +75,7 @@ export class FormDynamicComponent implements OnInit {
     // console.log(this.contactForm.get('phones'));
     // console.log(this.emails.controls[1].hasError('required'));
     // console.log(this.emails.controls[1].hasError('pattern'));
-    console.log(this.emails.controls[0].get('email')?.errors);
+    console.log(this.phones.controls[0].get('phone')?.hasError('pattern'));
+    // console.log(this.emails.controls[0].hasError('email'));
   }
 }
