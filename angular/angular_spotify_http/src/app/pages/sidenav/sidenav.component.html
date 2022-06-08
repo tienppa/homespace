@@ -1,0 +1,46 @@
+<div class="container" style="height: 90vh;">
+    <a href="index.html" class="navbar-brand spotify-logo">
+        <img class="my-4" src="../../assets/img/spotify.png" style="width: 150px;" alt="">
+    </a>
+
+    <ul class="list-group list-group-flush">
+        <a href="#" class="list-group-item text-white border-0 spotify-sidenav__link">
+            <i class="fas fa-home fs-5 me-2"></i>
+            Home
+        </a>
+        <a href="#" class="list-group-item text-white border-0 spotify-sidenav__link" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions">
+            <i class="fas fa-search fs-5 me-2"></i>
+            Search
+        </a>
+        <a href="#" class="list-group-item text-white border-0 mb-4 spotify-sidenav__link">
+            <i class="fas fa-photo-video fs-5 me-2"></i>
+            Your Libary
+        </a>
+        <a href="#" class="list-group-item text-white border-0 spotify-sidenav__link">
+            <i class="fas fa-calendar-plus fs-5 me-2"></i>
+            Create Playlist
+        </a>
+        <a href="#" class="list-group-item text-white border-0 spotify-sidenav__link">
+            <i class="fas fa-heart fs-5 me-2"></i>
+            Liked Songs
+        </a>
+    </ul>
+    <div class="px-3">
+        <hr class="text-white">
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Search</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</div>

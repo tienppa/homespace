@@ -1,0 +1,21 @@
+.spotify-footer {
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #fff;
+  .spotify-play__menu {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .spotify-volumn {
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+}
