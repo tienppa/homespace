@@ -342,7 +342,7 @@ body {
     font-weight: 600;
 }
 
-#content main .table-date {
+#content main .table-data {
     display: flex;
     flex-wrap: wrap;
     grid-gap: 24px;
@@ -350,82 +350,82 @@ body {
     width: 100%;
     color: var(--dark);
 }
-#content main .table-date > div {
+#content main .table-data > div {
     border-radius: 20px;
     background: var(--light);
     padding: 24px;
     overflow-x: auto;
 }
-#content main .table-date .head {
+#content main .table-data .head {
     display: flex;
     align-items: center;
     grid-gap: 16px;
     margin-bottom: 24px;
 }
-#content main .table-date .head h3 {
+#content main .table-data .head h3 {
     margin-right: auto;
     font-size: 24px;
     font-weight: 600;
 }
-#content main .table-date .head .bx {
+#content main .table-data .head .bx {
     cursor: pointer;
 }
-#content main .table-date .order {
+#content main .table-data .order {
     flex-grow: 1;
     flex-basis: 500px;
 }
-#content main .table-date .order table {
+#content main .table-data .order table {
     width: 100%;
     border-collapse: collapse;
 }
-#content main .table-date .order table th {
+#content main .table-data .order table th {
     padding-bottom: 12px;
     font-size: 13px;
     text-align: left;
     border-bottom: 1px solid var(--grey);
 }
-#content main .table-date .order table td {
+#content main .table-data .order table td {
     padding: 16px 0;
 }
-#content main .table-date .order table tr td:first-child {
+#content main .table-data .order table tr td:first-child {
     display: flex;
     align-items: center;
     grid-gap: 12px;
     padding-left: 6px;
 }
-#content main .table-date .order table td img {
+#content main .table-data .order table td img {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     object-fit: cover;
 }
-#content main .table-date .order table tbody tr:hover {
+#content main .table-data .order table tbody tr:hover {
     background: var(--grey);
 }
-#content main .table-date .order table tr td .status {
+#content main .table-data .order table tr td .status {
     font-size: 10px;
     padding: 6px 16px;
     color: var(--light);
     border-radius: 20px;
     font-weight: 700;
 }
-#content main .table-date .order table tr td .status.completed {
+#content main .table-data .order table tr td .status.completed {
     background: var(--blue);
 }
-#content main .table-date .order table tr td .status.process {
+#content main .table-data .order table tr td .status.process {
     background: var(--yellow);
 }
-#content main .table-date .order table tr td .status.pending {
+#content main .table-data .order table tr td .status.pending {
     background: var(--orange);
 }
-#content main .table-date .todo {
+#content main .table-data .todo {
     flex-grow: 1;
     flex-basis: 300px;
 }
-#content main .table-date .todo .todo-list {
+#content main .table-data .todo .todo-list {
     width: 100%;
 }
-#content main .table-date .todo .todo-list li {
+#content main .table-data .todo .todo-list li {
     width: 100%;
     margin-bottom: 16px;
     background: var(--grey);
@@ -435,16 +435,16 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-#content main .table-date .todo .todo-list li .bx {
+#content main .table-data .todo .todo-list li .bx {
     cursor: pointer;
 }
-#content main .table-date .todo .todo-list li.completed {
+#content main .table-data .todo .todo-list li.completed {
     border-left: 10px solid var(--blue);
 }
-#content main .table-date .todo .todo-list li.not-completed {
+#content main .table-data .todo .todo-list li.not-completed {
     border-left: 10px solid var(--orange);
 }
-#content main .table-date .todo .todo-list li:last-child {
+#content main .table-data .todo .todo-list li:last-child {
     margin-bottom: 0;
 }
 
@@ -496,15 +496,15 @@ body {
         grid-template-columns: 1fr;
     }
 
-    #content main .table-date .head {
+    #content main .table-data .head {
         min-width: 420px;
     }
 
-    #content main .table-date .order table {
+    #content main .table-data .order table {
         min-width: 420px;
     }
 
-    #content main .table-date .todo .todo-list {
+    #content main .table-data .todo .todo-list {
         min-width: 420px;
     }
 }
