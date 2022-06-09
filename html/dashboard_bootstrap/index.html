@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Dashboard Bootstrap</title>
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+        <link
+            rel="stylesheet"
+            href="./assets/css/dataTables.bootstrap5.min.css"
+        />
+        <link
+            href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+
+    <body>
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <!-- offcanvas trigger -->
+                <button
+                    class="navbar-toggler me-2"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample"
+                    aria-controls="offcanvasExample"
+                >
+                    <span
+                        class="navbar-toggler-icon"
+                        data-bs-target="#offcanvasExample"
+                    ></span>
+                </button>
+                <!-- offcanvas trigger -->
+                <a class="navbar-brand fw-bold text-uppercase me-auto" href="#"
+                    >Dashboard</a
+                >
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <form class="d-flex ms-auto" role="search">
+                        <div class="input-group my-2 my-lg-0">
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Recipient's username"
+                                aria-label="Recipient's username"
+                                aria-describedby="button-addon2"
+                            />
+                            <button
+                                class="btn btn-primary"
+                                type="button"
+                                id="button-addon2"
+                            >
+                                <i class="bx bx-search"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link ms-2 p-0 d-flex justify-content-center align-items-center"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                <i class="bx bxs-user-circle fs-3"></i>
+                            </a>
+                            <ul
+                                class="dropdown-menu dropdown-menu-end"
+                                aria-labelledby="navbarDropdown"
+                            >
+                                <li>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"
+                                        >Another action</a
+                                    >
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"
+                                        >Something else here</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- navbar -->
+
+        <!-- offcanvas -->
+        <div
+            class="offcanvas offcanvas-start bg-dark text-white sidebar-nav"
+            tabindex="-1"
+            id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel"
+        >
+            <div class="offcanvas-body p-0">
+                <nav class="navbar-dark">
+                    <ul class="navbar-nav">
+                        <li>
+                            <div
+                                class="text-muted small fw-bold text-uppercase px-3"
+                            >
+                                Code
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-3 active">
+                                <span class="me-2">
+                                    <i class="bx bxs-dashboard"></i>
+                                </span>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+                        <li class="my-4">
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li>
+                            <div
+                                class="text-muted small fw-bold text-uppercase px-3"
+                            >
+                                Interface
+                            </div>
+                        </li>
+                        <li>
+                            <a
+                                class="nav-link px-3 sidebar-link"
+                                data-bs-toggle="collapse"
+                                href="#collapseExample"
+                                role="button"
+                                aria-expanded="false"
+                                aria-controls="collapseExample"
+                            >
+                                <span class="me-2">
+                                    <i class="bx bxs-layout"></i>
+                                </span>
+                                <span> Layouts </span>
+                                <span class="right-icon ms-auto">
+                                    <i class="bx bxs-down-arrow"></i>
+                                </span>
+                            </a>
+                            <div class="collapse" id="collapseExample">
+                                <div>
+                                    <ul class="navbar-nav ps-3">
+                                        <li>
+                                            <a href="#" class="nav-link px-3">
+                                                <span class="me-2">
+                                                    <i
+                                                        class="bx bx-link-external"
+                                                    ></i>
+                                                </span>
+                                                <span> Nested Link </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-3 active">
+                                <span class="me-2">
+                                    <i class="bx bxs-book-content"></i>
+                                </span>
+                                <span>Pages</span>
+                            </a>
+                        </li>
+                        <li class="my-4">
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li>
+                            <div
+                                class="text-muted small fw-bold text-uppercase px-3"
+                            >
+                                Addons
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-3 active">
+                                <span class="me-2">
+                                    <i class="bx bx-bar-chart-alt-2"></i>
+                                </span>
+                                <span>Charts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-3 active">
+                                <span class="me-2">
+                                    <i class="bx bx-table"></i>
+                                </span>
+                                <span>Tables</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- offcanvas -->
+
+        <!-- main -->
+        <main class="mt-5 pt-3">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-md-12 fw-bold fs-3">Dashboard</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-3 mb-3">
+                        <div class="card text-white bg-primary h-100">
+                            <div class="card-body">
+                                <div
+                                    class="d-flex justify-content-between align-items-center gap-2"
+                                >
+                                    <div class="p-4">
+                                        <i
+                                            class="bx bxs-color fs-1 fw-bold"
+                                        ></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">
+                                            Total request
+                                        </h5>
+                                        <p class="card-text">
+                                            Some quick example text to build on
+                                            the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card text-white bg-secondary h-100">
+                            <div class="card-body">
+                                <div
+                                    class="d-flex justify-content-between align-items-center gap-2"
+                                >
+                                    <div class="p-4">
+                                        <i
+                                            class="bx bxl-steam fs-1 fw-bold"
+                                        ></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">Message</h5>
+                                        <p class="card-text">
+                                            Some quick example text to build on
+                                            the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card text-white bg-success h-100">
+                            <div class="card-body">
+                                <div
+                                    class="d-flex justify-content-between align-items-center gap-2"
+                                >
+                                    <div class="p-4">
+                                        <i
+                                            class="bx bx-message-square-dots fs-1 fw-bold"
+                                        ></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">Data manager</h5>
+                                        <p class="card-text">
+                                            Some quick example text to build on
+                                            the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card text-white bg-danger h-100">
+                            <div class="card-body">
+                                <div
+                                    class="d-flex justify-content-between align-items-center gap-2"
+                                >
+                                    <div class="p-4">
+                                        <i
+                                            class="bx bx-notepad fs-1 fw-bold"
+                                        ></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">Incomes</h5>
+                                        <p class="card-text">
+                                            Some quick example text to build on
+                                            the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">Charts</div>
+                            <div class="card-body">
+                                <canvas
+                                    class="chart"
+                                    width="400"
+                                    height="200"
+                                ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">Charts</div>
+                            <div class="card-body">
+                                <canvas
+                                    class="chart"
+                                    width="400"
+                                    height="200"
+                                ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">Data table</div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table
+                                        class="w-100 table table-striped data-table"
+                                    >
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">First</th>
+                                                <th scope="col">Last</th>
+                                                <th scope="col">Handle</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colspan="2">
+                                                    Larry the Bird
+                                                </td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colspan="2">
+                                                    Larry the Bird
+                                                </td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colspan="2">
+                                                    Larry the Bird
+                                                </td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colspan="2">
+                                                    Larry the Bird
+                                                </td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- main -->
+
+        <script src="./assets/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+        <script src="./assets/js/jquery-3.5.1.js"></script>
+        <script src="./assets/js/jquery.dataTables.min.js"></script>
+        <script src="./assets/js/dataTables.bootstrap5.min.js"></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
