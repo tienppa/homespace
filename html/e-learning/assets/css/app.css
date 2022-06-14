@@ -1,0 +1,154 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+input {
+  line-height: normal;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-size: 22px;
+  color: #252641;
+  font-weight: 400;
+  line-height: 1;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  padding: 13px 50px;
+  border: none;
+  outline: none;
+  border-radius: 100rem;
+  cursor: pointer;
+}
+.btn--white {
+  background: white;
+  color: #6c6c6c;
+}
+.btn--primary {
+  background: #f48c06;
+  color: white;
+}
+
+.header {
+  background: #fff2e1;
+  border-radius: 0 0 200px 200px;
+}
+.header-container {
+  max-width: 1725px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+.header-top {
+  padding-top: 60px;
+  padding-bottom: 83px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-buttons {
+  margin-left: 80px;
+  display: flex;
+  align-items: center;
+  gap: 0 34px;
+}
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 37px;
+}
+.header-heading {
+  font-size: 54px;
+  font-weight: bold;
+  margin-bottom: 34px;
+  line-height: 1.5;
+  color: #f48c06;
+}
+.header-heading span {
+  color: #2f327d;
+}
+.header-desc {
+  font-size: 24px;
+  line-height: 160%;
+  margin-bottom: 52px;
+  color: #464646;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0 40px;
+}
+.header-actions .btn--primary {
+  padding: 22px 38px;
+}
+
+.menu {
+  margin-left: auto;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0 80px;
+}
+.menu-link {
+  color: inherit;
+}
+
+.watch {
+  display: flex;
+  align-items: center;
+  gap: 0 32px;
+  font-size: 24px;
+  line-height: 1.5;
+  color: inherit;
+}
+.watch-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 2px 20px 60px rgba(61, 155, 185, 0.1);
+}
+
+/*# sourceMappingURL=app.css.map */

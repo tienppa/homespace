@@ -1,0 +1,84 @@
+.header {
+    background: $yellow;
+    border-radius: 0 0 200px 200px;
+    &-container {
+        max-width: 1725px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 15px;
+    }
+    &-top {
+        padding-top: 60px;
+        padding-bottom: 83px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-buttons {
+        margin-left: 80px;
+        display: flex;
+        align-items: center;
+        gap: 0 34px;
+    }
+
+    &-main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0 37px;
+    }
+    &-heading {
+        font-size: 54px;
+        font-weight: bold;
+        margin-bottom: 34px;
+        line-height: calc(81 / 54);
+        color: $secondary-color;
+        span {
+            color: $primary-color;
+        }
+    }
+    &-desc {
+        font-size: 24px;
+        line-height: 160%;
+        margin-bottom: 52px;
+        color: $gray-dark;
+    }
+    &-actions {
+        display: flex;
+        align-items: center;
+        gap: 0 40px;
+        .btn--primary {
+            padding: 22px 38px;
+        }
+    }
+}
+
+.menu {
+    margin-left: auto;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0 80px;
+    &-link {
+        color: inherit;
+    }
+}
+
+.watch {
+    display: flex;
+    align-items: center;
+    gap: 0 32px;
+    font-size: 24px;
+    line-height: calc(36 / 24);
+    color: inherit;
+    &-icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #ffffff;
+        box-shadow: 2px 20px 60px rgba(61, 155, 185, 0.1);
+    }
+}
